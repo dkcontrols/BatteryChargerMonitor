@@ -86,7 +86,7 @@ void sendInfoViaHelium()
   // This function sends a JSON format payload using the Helium Atom 
 
   // Local variables
-  static long i = 0;
+  static unsigned long i = 0;
   float t  = 0;
   float h  = 0;
   float v  = 0;
@@ -102,7 +102,7 @@ void sendInfoViaHelium()
   Serial.print(F("i = "));
   Serial.println(i);
   buf_ptr += addToBuffer(buf_ptr, MAX_JSON_FORMAT_STR, JSON_FORMATS[0]);
-  snprintf(tmpBuf, 11, "%d", i);
+  snprintf(tmpBuf, 11, "%lu", i);
   buf_ptr += addToBuffer(buf_ptr, sizeof(tmpBuf), tmpBuf);
 
   // Read Temperature
@@ -293,7 +293,7 @@ void setup()
 void loop()
 {
   // Measure battery values. We need to do this as often as 
-  // possible since some chargers apply pulses as short as 1 mS.
+  // possible since some chargers apply pulses of less than 1 ms.
   measureBattery();
   
   // Check if it is time to send a packet
