@@ -50,6 +50,7 @@ struct helium_info info;
 time_t timestamp; // Seconds since Jan. 1, 1970
 TimeElements tm;
 
+// Battery measurement variables
 long highCurrentSamples = 0;
 long lowCurrentSamples = 0;
 float peakCurrent = 0;
@@ -233,7 +234,7 @@ void measureBattery()
     // dropping the voltage to a suitable range for the ADC. 
     val = ADCValue * (ADC_VOLTS_PER_BIT * 4);
 
-    // Find the maximum voltaget
+    // Find the maximum voltage
     if (val > peakVoltage)
     {
       peakVoltage = val;
