@@ -17,4 +17,4 @@ The followng libraries need to be installed:
 3) Time by Michael Margolis
 
 The schematic and other project details can be found at:
-https://www.hackster.io/david-kanceruk/battery-charger-monitor
+https://www.hackster.io/david-kanceruk/battery-charger-monitor-326796#schematics
